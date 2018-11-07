@@ -1,0 +1,24 @@
+{
+  "name": "electron-game",
+  "version": "1.0.0",
+  "description": "An Electron game prototype made in JavaScript with p5.js",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/InkanDev/Electron-Game.git"
+  },
+  "author": "Ange PAGEL",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/InkanDev/Electron-Game/issues"
+  },
+  "homepage": "https://github.com/InkanDev/Electron-Game#readme",
+  "devDependencies": {
+    "electron": "^3.0.8"
+  },
+  "dependencies": {}
+}

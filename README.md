@@ -1,2 +1,2 @@
-# Electron-Game
-An Electron game prototype made in JavaScript with p5.js.
+# Electron-Pong
+A simple Pong game written in JavaScript with Electron and p5.js.

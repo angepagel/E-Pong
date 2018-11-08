@@ -3,15 +3,21 @@ class Paddle {
 
     constructor(x, y) {
         this.position = createVector(x, y);
-        this.width = 30;
-        this.height = 30;
+    }
+
+    static get width() {
+        return 30;
+    }
+
+    static get height() {
+        return 100;
     }
 
     draw() {
         push();
         noStroke();
         fill(255);
-        rect(this.position.x, this.position.y, this.width, this.height);
+        rect(this.position.x, this.position.y, Paddle.width, Paddle.height);
         pop();
     }
 

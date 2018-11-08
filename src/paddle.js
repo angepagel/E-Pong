@@ -7,7 +7,6 @@ class Paddle {
         this.height = 30;
     }
 
-
     draw() {
         push();
         noStroke();
@@ -15,5 +14,14 @@ class Paddle {
         rect(this.position.x, this.position.y, this.width, this.height);
         pop();
     }
+
+    move(upKeyCode, downKeyCode) {  
+        if (keyIsDown(upKeyCode)) {
+            this.position.y -= 5;
+        }
+        if (keyIsDown(downKeyCode)) {
+            this.position.y += 5;
+        }
+    }    
 
 }

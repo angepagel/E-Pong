@@ -3,6 +3,7 @@ class Paddle {
 
     constructor(x, y) {
         this.position = createVector(x, y);
+        this.speed = 5;
     }
 
     static get width() {
@@ -23,10 +24,14 @@ class Paddle {
 
     move(upKeyCode, downKeyCode) {  
         if (keyIsDown(upKeyCode)) {
-            this.position.y -= 5;
+            if (this.position.y > 0) {
+                this.position.y -= this.speed;
+            }
         }
         if (keyIsDown(downKeyCode)) {
-            this.position.y += 5;
+            if (this.position.y + Paddle.height < window.innerHeight) {
+                this.position.y += this.speed;
+            }
         }
     }    
 

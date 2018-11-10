@@ -4,6 +4,7 @@ class Ball {
     constructor(x, y) {
         this.position = createVector(x, y);
         this.speed = createVector(random([-1,1]), random(-1,1)); // Generates a random trajectory
+        this.speed.setMag(7);
     }
 
     static get diameter() {

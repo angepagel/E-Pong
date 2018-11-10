@@ -16,7 +16,7 @@ function setup() {
   paddleP2 = new Paddle(window.innerWidth-paddleMargin-Paddle.width, middle);
 
   /* Creates and positions the ball at the center of the window */
-  ball = new Ball(window.innerWidth/2-Ball.diameter/2, window.innerHeight/2-Ball.diameter/2);
+  ball = new Ball(window.innerWidth/2-Ball.radius, window.innerHeight/2-Ball.radius);
   
 }
 

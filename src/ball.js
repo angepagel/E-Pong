@@ -7,14 +7,19 @@ class Ball {
         this.speed.setMag(7);
     }
 
+    static get radius() {
+        return 7;
+    }
+
     static get diameter() {
-        return 10
+        return Ball.radius*2;
     }
 
     draw() {
         push() ;
         noStroke();
         fill(255, 0, 0);
+        ellipseMode(CORNER);
         this.position.add(this.speed);
         ellipse(this.position.x, this.position.y, Ball.diameter, Ball.diameter);
         pop();

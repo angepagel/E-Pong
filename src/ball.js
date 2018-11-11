@@ -25,4 +25,12 @@ class Ball {
         pop();
     }
 
+    invertSpeedX() {
+        this.speed.x *= -1;
+    }
+
+    invertSpeedY() {
+        this.speed.y *= -1;
+    }       
+
 }

@@ -25,6 +25,17 @@ class Ball {
         pop();
     }
 
+    /* AABB collision detection */
+    isColliding(paddle)
+    {
+       return !(
+           (this.position.x >= paddle.position.x + Paddle.width)
+        || (this.position.x + Ball.diameter <= paddle.position.x)
+        || (this.position.y >= paddle.position.y + Paddle.height)
+        || (this.position.y + Ball.diameter <= paddle.position.y)
+        ); 
+    }
+
     invertSpeedX() {
         this.speed.x *= -1;
     }

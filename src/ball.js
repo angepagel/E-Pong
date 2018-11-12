@@ -47,6 +47,12 @@ class Ball {
 
     invertSpeedY() {
         this.speed.y *= -1;
-    }       
+    }
+
+    reset() {
+        this.position = this.initialPosition.copy();
+        this.speed = createVector(random([-1,1]), random(-1,1));
+        this.speed.setMag(Ball.speed);
+    }
 
 }

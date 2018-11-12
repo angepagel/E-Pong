@@ -2,7 +2,8 @@
 class Ball {
 
     constructor(x, y) {
-        this.position = createVector(x, y);
+        this.initialPosition = createVector(x, y); 
+        this.position = this.initialPosition.copy();
         this.speed = createVector(random([-1,1]), random(-1,1)); // Generates a random trajectory
         this.speed.setMag(7);
     }

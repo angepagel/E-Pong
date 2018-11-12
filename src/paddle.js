@@ -3,11 +3,11 @@ class Paddle {
 
     constructor(x, y) {
         this.position = createVector(x, y);
-        this.speed = 5;
+        this.speed = 10;
     }
 
     static get width() {
-        return 30;
+        return 15;
     }
 
     static get height() {

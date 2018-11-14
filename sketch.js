@@ -17,7 +17,7 @@ function setup() {
   paddleP1 = new Paddle(paddleMargin, middle);
   paddleP2 = new Paddle(window.innerWidth-paddleMargin-Paddle.width, middle);
 
-  /* Initializes both players' score */
+  /* Initializes the score of both players */
   scoreP1 = 0;
   scoreP2 = 0;
 
@@ -55,9 +55,21 @@ function draw() {
     ball.reset();
   }
 
+  showScore();
 
   paddleP1.draw();
   paddleP2.draw();
   ball.draw();
 
+}
+
+/* Displays the score of both players */
+function showScore() {
+  push();
+  fill(255);
+  textSize(32);
+  textAlign(CENTER, CENTER);
+  text(scoreP1, window.innerWidth/2-60, 60);
+  text(scoreP2, window.innerWidth/2+60, 60);
+  pop();
 }

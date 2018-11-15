@@ -5,7 +5,7 @@ class Ball {
         this.initialPosition = createVector(x, y); 
         this.position = this.initialPosition.copy();
         this.speed = createVector(random([-1,1]), random(-1,1)); // Generates a random trajectory
-        this.speed.setMag(Ball.speed);
+        this.speed.setMag(Ball.speedMag);
     }
 
     static get radius() {
@@ -16,8 +16,14 @@ class Ball {
         return Ball.radius*2;
     }
 
-    static get speed() {
+    static get speedMag() {
         return 7;
+    }
+
+    setSpeed(x, y) {
+        this.speed.x = x;
+        this.speed.y = y;
+        this.speed.setMag(Ball.speedMag);
     }
 
     draw() {
@@ -51,8 +57,7 @@ class Ball {
 
     reset() {
         this.position = this.initialPosition.copy();
-        this.speed = createVector(random([-1,1]), random(-1,1));
-        this.speed.setMag(Ball.speed);
+        this.setSpeed(random([-1,1]), random(-1,1));
     }
 
 }

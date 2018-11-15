@@ -36,15 +36,13 @@ function draw() {
   /* Ball collision with P1 and P2 paddles */
   if (ball.isColliding(paddleP1)) {
     angleMode(DEGREES);
-    angle = map(ball.position.y, paddleP1.position.y, paddleP1.position.y+Paddle.height, -45, 45);
-    ball.speed.x = Ball.speed * cos(angle);
-    ball.speed.y = Ball.speed * sin(angle);
+    angle = map(ball.position.y, paddleP1.position.y, paddleP1.position.y + Paddle.height, -45, 45);
+    ball.setSpeed(cos(angle), sin(angle));
   } 
   else if (ball.isColliding(paddleP2)) {
     angleMode(DEGREES);
-    angle = map(ball.position.y, paddleP2.position.y, paddleP2.position.y+Paddle.height, 225, 135);
-    ball.speed.x = Ball.speed * cos(angle);
-    ball.speed.y = Ball.speed * sin(angle);
+    angle = map(ball.position.y, paddleP2.position.y, paddleP2.position.y + Paddle.height, 225, 135);
+    ball.setSpeed(cos(angle), sin(angle));
   }
 
   /* Ball collision with top and bottom window borders */

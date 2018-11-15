@@ -20,11 +20,12 @@ class Ball {
         return 7;
     }
 
-    setSpeed(x, y) {
+    setSpeed(x, y, multiplier) {
         this.speed.x = x;
         this.speed.y = y;
-        this.speed.setMag(Ball.speedMag);
+        this.speed.setMag(Ball.speedMag*multiplier);
     }
+
 
     draw() {
         push() ;
@@ -57,7 +58,7 @@ class Ball {
 
     reset() {
         this.position = this.initialPosition.copy();
-        this.setSpeed(random([-1,1]), random(-1,1));
+        this.setSpeed(random([-1,1]), random(-1,1), 1);
     }
 
 }

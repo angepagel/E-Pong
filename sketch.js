@@ -4,6 +4,8 @@ let paddleP2;
 let ball;
 let scoreP1;
 let scoreP2;
+let speedMultiplier;
+let speedIncrement;
 
 function setup() {
   
@@ -23,6 +25,9 @@ function setup() {
 
   /* Creates and positions the ball at the center of the window */
   ball = new Ball(window.innerWidth/2-Ball.radius, window.innerHeight/2-Ball.radius);
+
+  speedMultiplier = 1;
+  speedIncrement = 0.07;
   
 }
 
@@ -37,12 +42,14 @@ function draw() {
   if (ball.isColliding(paddleP1)) {
     angleMode(DEGREES);
     angle = map(ball.position.y, paddleP1.position.y, paddleP1.position.y + Paddle.height, -45, 45);
-    ball.setSpeed(cos(angle), sin(angle));
+    speedMultiplier += speedIncrement;
+    ball.setSpeed(cos(angle), sin(angle), speedMultiplier);
   } 
   else if (ball.isColliding(paddleP2)) {
     angleMode(DEGREES);
     angle = map(ball.position.y, paddleP2.position.y, paddleP2.position.y + Paddle.height, 225, 135);
-    ball.setSpeed(cos(angle), sin(angle));
+    speedMultiplier += speedIncrement;
+    ball.setSpeed(cos(angle), sin(angle), speedMultiplier);
   }
 
   /* Ball collision with top and bottom window borders */
@@ -53,12 +60,14 @@ function draw() {
   /* Ball collision with left border */
   if (ball.position.x + Ball.diameter < 0) {
     scoreP1++;
+    speedMultiplier = 1;
     ball.reset();
   }
 
   /* Ball collision with right border */
   if (ball.position.x > window.innerWidth) {
     scoreP2++;
+    speedMultiplier = 1;
     ball.reset();
   }
 

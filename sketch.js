@@ -34,8 +34,17 @@ function draw() {
   paddleP2.move(UP_ARROW, DOWN_ARROW); // Player 2 controls are the up and down arrows
   
   /* Ball collision with P1 and P2 paddles */
-  if (ball.isColliding(paddleP1) || ball.isColliding(paddleP2)) {
-    ball.invertSpeedX();
+  if (ball.isColliding(paddleP1)) {
+    angleMode(DEGREES);
+    angle = map(ball.position.y, paddleP1.position.y, paddleP1.position.y+Paddle.height, -45, 45);
+    ball.speed.x = Ball.speed * cos(angle);
+    ball.speed.y = Ball.speed * sin(angle);
+  } 
+  else if (ball.isColliding(paddleP2)) {
+    angleMode(DEGREES);
+    angle = map(ball.position.y, paddleP2.position.y, paddleP2.position.y+Paddle.height, 225, 135);
+    ball.speed.x = Ball.speed * cos(angle);
+    ball.speed.y = Ball.speed * sin(angle);
   }
 
   /* Ball collision with top and bottom window borders */

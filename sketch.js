@@ -6,6 +6,16 @@ let scoreP1;
 let scoreP2;
 let speedMultiplier;
 let speedIncrement;
+let soundTop;
+let soundBottom;
+let soundPaddle;
+let soundScore;
+
+function preload() {
+  soundWall = loadSound('assets/wall.wav');
+  soundPaddle = loadSound('assets/paddle.wav');
+  soundScore = loadSound('assets/score.wav');
+}
 
 function setup() {
   
@@ -28,7 +38,7 @@ function setup() {
 
   speedMultiplier = 1;
   speedIncrement = 0.07;
-  
+
 }
 
 function draw() {
@@ -44,17 +54,20 @@ function draw() {
     angle = map(ball.position.y, paddleP1.position.y, paddleP1.position.y + Paddle.height, -45, 45);
     speedMultiplier += speedIncrement;
     ball.setSpeed(cos(angle), sin(angle), speedMultiplier);
+    soundPaddle.play();
   } 
   else if (ball.isColliding(paddleP2)) {
     angleMode(DEGREES);
     angle = map(ball.position.y, paddleP2.position.y, paddleP2.position.y + Paddle.height, 225, 135);
     speedMultiplier += speedIncrement;
     ball.setSpeed(cos(angle), sin(angle), speedMultiplier);
+    soundPaddle.play();
   }
 
   /* Ball collision with top and bottom window borders */
   if (ball.position.y < 0 || ball.position.y + Ball.diameter > window.innerHeight) {
     ball.invertSpeedY();
+    soundWall.play();
   }
 
   /* Ball collision with left border */
@@ -62,6 +75,7 @@ function draw() {
     scoreP1++;
     speedMultiplier = 1;
     ball.reset();
+    soundScore.play();
   }
 
   /* Ball collision with right border */
@@ -69,6 +83,7 @@ function draw() {
     scoreP2++;
     speedMultiplier = 1;
     ball.reset();
+    soundScore.play();
   }
 
   showScore();

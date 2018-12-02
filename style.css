@@ -1,6 +1,21 @@
 @import url("node_modules/bootstrap/dist/css/bootstrap.min.css");
 
 body {
-  background-color: #282c34;
-  color: #fff;
+    background-image: radial-gradient(circle at center center, #353942, #353942 1px, #282c34 1px, #282c34);
+    background-size: 28px 28px;
+    color: #fff;
+}
+
+.nav-link {
+    color: #fff;
+    background-color: rgba(0, 123, 255);
+    box-shadow: 0 4px 14px 0 rgba(0, 123, 255, 0.40);
+    transition: 0.5s;
+}
+
+.nav-link:hover {
+    color: inherit;
+    background-color: rgba(0, 163, 255);
+    box-shadow: 0 4px 14px 0 rgba(0, 163, 255, 0.40);
+    transition: 0.5s;
 }

@@ -100,7 +100,7 @@ function showScore() {
   fill(255);
   textSize(32);
   textAlign(CENTER, CENTER);
-  text(scoreP1, window.innerWidth/2-60, 60);
-  text(scoreP2, window.innerWidth/2+60, 60);
+  text(scoreP1, window.innerWidth/2+60, 60);
+  text(scoreP2, window.innerWidth/2-60, 60);
   pop();
 }

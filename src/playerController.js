@@ -13,7 +13,16 @@ class PlayerController extends Controller {
     }
 
     update() {
-        return
+        if (keyIsDown(this.upKeyCode)) {
+            if (this.paddle.position.y > 0) {
+                this.paddle.position.y -= this.paddle.speed;
+            }
+        }
+        if (keyIsDown(this.downKeyCode)) {
+            if (this.paddle.position.y + Paddle.height < window.innerHeight) {
+                this.paddle.position.y += this.paddle.speed;
+            }
+        }
     }
 
 }

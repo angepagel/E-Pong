@@ -43,8 +43,6 @@ function setup() {
 
 function draw() {
 
-  background('#222222');
-
   paddleP1.move(90, 83); // Player 1 controls are Z(up) and S(down) (azerty)
   paddleP2.move(UP_ARROW, DOWN_ARROW); // Player 2 controls are the up and down arrows
   
@@ -86,6 +84,8 @@ function draw() {
     soundScore.play();
   }
 
+  clear();
+  
   showScore();
 
   paddleP1.draw();

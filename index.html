@@ -13,6 +13,14 @@
       <script src="src/paddle.js"></script>
       <script src="src/ball.js"></script>
       <script src="sketch.js"></script>
+      <script>
+        
+          const { remote } = require('electron');
+
+          remote.getCurrentWindow().setSize(1080, 720);
+          remote.getCurrentWindow().center();
+
+      </script>
   </body>
 
 </html>

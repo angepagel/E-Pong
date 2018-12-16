@@ -15,12 +15,4 @@ class Paddle {
         return 100;
     }
 
-    draw() {
-        push();
-        noStroke();
-        fill(255);
-        rect(this.position.x, this.position.y, Paddle.width, Paddle.height);
-        pop();
-    }  
-
 }

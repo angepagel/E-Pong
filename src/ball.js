@@ -27,16 +27,6 @@ class Ball {
     }
 
 
-    draw() {
-        push() ;
-        noStroke();
-        fill(255, 0, 0);
-        ellipseMode(CORNER);
-        this.position.add(this.speed);
-        ellipse(this.position.x, this.position.y, Ball.diameter, Ball.diameter);
-        pop();
-    }
-
     /* AABB collision detection */
     isColliding(paddle)
     {

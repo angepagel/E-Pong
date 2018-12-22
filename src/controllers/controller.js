@@ -1,8 +1,8 @@
 
 class Controller {
     
-    constructor(paddle) {
-        this.paddle = paddle;
+    constructor(gameObject) {
+        this.gameObject = gameObject;
     }
 
     update() {

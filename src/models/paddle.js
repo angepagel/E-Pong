@@ -1,18 +1,16 @@
 
-class Paddle {
+class Paddle extends GameObject {
 
     constructor(x, y) {
-        this.position = createVector(x, y);
-        this.speed = 10;
-        this.controller = null;
-    }
+        super(x, y);
 
-    static get width() {
-        return 15;
-    }
+        this._paddleSpeed = 10;
+        
+        this.width = 15;
+        this.height = 100;
+        this.view = new PaddleView(this);
+        }
 
-    static get height() {
-        return 100;
-    }
+    get paddleSpeed() { return this._paddleSpeed;}
 
 }

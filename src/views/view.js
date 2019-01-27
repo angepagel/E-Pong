@@ -2,7 +2,7 @@
 class View {
 
     constructor(gameObject) {
-        this.gameObject = gameObject;
+        this._gameObject = gameObject;
     }
 
     draw() {

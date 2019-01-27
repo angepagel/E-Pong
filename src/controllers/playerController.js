@@ -14,14 +14,10 @@ class PlayerController {
 
     update() {
         if (keyIsDown(this.upKeyCode)) {
-            if (this._paddle.position.y > 0) {
-                this._paddle.position.add(createVector(0, -this._paddle.paddleSpeed));
-            }
+            this._paddle.goUp();
         }
         if (keyIsDown(this.downKeyCode)) {
-            if (this._paddle.position.y + this._paddle.height < window.innerHeight) {
-                this._paddle.position.add(createVector(0, this._paddle.paddleSpeed));
-            }
+            this._paddle.goDown();
         }
     }
 

@@ -14,6 +14,12 @@ class GameObject {
     }
 
     
+    get initialPosition() { return this._initialPosition; }
+    set initialPosition(newPosition) {
+        this._initialPosition = createVector(newPosition.x, newPosition.y);
+        this._position = this._initialPosition.copy();
+    }
+
     get position() { return this._position; }
     set position(newPosition) { this._position = createVector(newPosition.x, newPosition.y); }
 

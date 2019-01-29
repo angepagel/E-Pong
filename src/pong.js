@@ -55,7 +55,63 @@ class Pong {
     }
 
     draw() {
-        return
+
+        this._gameObjects.forEach(function(gameObject) {
+            gameObject.update();
+        });
+
+        /* Ball collision with P1 and P2 paddles */
+        if (this._ball.isColliding(this._paddleP1)) {
+            angleMode(DEGREES);
+            let angle = map(this._ball.position.y, this._paddleP1.position.y, this._paddleP1.position.y + this._paddleP1.height, -45, 45);
+            this._speedMultiplier += this._speedIncrement;
+            this._ball.speed = {
+            x: cos(angle),
+            y: sin(angle),
+            multiplier: this._ball.speedMagnitude * this._speedMultiplier
+            }
+            this._soundPaddle.play();
+        } 
+        else if (this._ball.isColliding(this._paddleP2)) {
+            angleMode(DEGREES);
+            let angle = map(this._ball.position.y, this._paddleP2.position.y, this._paddleP2.position.y + this._paddleP2.height, 225, 135);
+            this._speedMultiplier += this._speedIncrement;
+            this._ball.speed = {
+            x: cos(angle),
+            y: sin(angle),
+            multiplier: this._ball.speedMagnitude * this._speedMultiplier
+            }
+            this._soundPaddle.play();
+        }
+
+        /* Ball collision with top and bottom window borders */
+        if (this._ball.position.y < 0 || this._ball.position.y + this._ball.diameter > window.innerHeight) {
+            this._ball.invertSpeedY();
+            this._soundWall.play();
+        }
+
+        /* Ball collision with left border */
+        if (this._ball.position.x + this._ball.diameter < 0) {
+            this._scoreP1++;
+            this._speedMultiplier = 1;
+            this._ball.resetPosition();
+            this._soundScore.play();
+        }
+
+        /* Ball collision with right border */
+        if (this._ball.position.x > window.innerWidth) {
+            this._scoreP2++;
+            this._speedMultiplier = 1;
+            this._ball.resetPosition();
+            this._soundScore.play();
+        }
+
+        clear();
+
+        this._gameObjects.forEach(function(gameObject) {
+            gameObject.draw();
+        });
+
     }
 
 }

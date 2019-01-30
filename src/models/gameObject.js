@@ -42,6 +42,17 @@ class GameObject {
     set view(newView) { this._view = newView; }
 
 
+    /* AABB collision detection */
+    isColliding(otherGameObject)
+    {
+        return !(
+            (this._position.x >= otherGameObject.position.x + otherGameObject.width)
+        ||  (this._position.x + this._width <= otherGameObject.position.x)
+        ||  (this._position.y >= otherGameObject.position.y + otherGameObject.height)
+        ||  (this._position.y + this._width <= otherGameObject.position.y)
+        ); 
+    }
+
     update() {
         this._controller.update();
     }

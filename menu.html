@@ -25,8 +25,17 @@
               <a id="hard" class="nav-link" href="index.html">Hard</a>
           </li>  
         </ul>
-        <span>Created by <a href="https://github.com/angepagel">Ange Pagel</a></span>
+        <span>Created by <a id="credits" href="https://github.com/angepagel">Ange Pagel</a></span>
     </div>
+
+    <script>
+        document.getElementById('credits').onclick = function(event) {
+            event.preventDefault();
+            let link = event.target.href;
+            require("electron").shell.openExternal(link);
+        }
+    </script>
+
   </body>
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </html>

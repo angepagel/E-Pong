@@ -1,5 +1,5 @@
 {
-  "name": "electron-pong",
+  "name": "e-pong",
   "version": "1.0.0",
   "description": "A simple Pong game written in JavaScript with Electron and p5.js.",
   "main": "main.js",
@@ -9,19 +9,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/InkanDev/Electron-Pong.git"
+    "url": "git+https://github.com/angepagel/E-Pong.git"
   },
   "author": "Ange PAGEL",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/InkanDev/Electron-Pong/issues"
+    "url": "https://github.com/angepagel/E-Pong/issues"
   },
-  "homepage": "https://github.com/InkanDev/Electron-Pong#readme",
+  "homepage": "https://github.com/angepagel/E-Pong#readme",
   "devDependencies": {
-    "electron": "^3.0.8"
+    "electron": "^3.1.12"
   },
   "dependencies": {
-    "bootstrap": "^4.1.3",
-    "p5": "^0.7.2"
+    "bootstrap": "^4.3.1",
+    "p5": "^0.7.3"
   }
 }
